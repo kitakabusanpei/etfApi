@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require "csv"
+
+CSV.foreach('db/etfperformance.csv', header: true) do |row|
+  Company.create(:date => row[0],
+                :price_1305 => row[1], :volume_1305 => row[2], :funds_1305 => row[3],
+                :price_1306 => row[4], :volume_1306 => row[5], :funds_1306 => row[6])

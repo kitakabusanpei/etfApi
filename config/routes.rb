@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :etfs, only: [:index, :show]
 
+  # ETFの種類ごとに作成！？
+  resources :performances, only: [:index]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
