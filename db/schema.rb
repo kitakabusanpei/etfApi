@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170706044414) do
+ActiveRecord::Schema.define(version: 20170808144912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,18 @@ ActiveRecord::Schema.define(version: 20170706044414) do
     t.string   "ticker"
     t.string   "abbreviated_b"
     t.integer  "crop"
+  end
+
+  create_table "performances", force: :cascade do |t|
+    t.string   "date"
+    t.integer  "price_1305"
+    t.integer  "volume_1305"
+    t.integer  "funds_1305"
+    t.integer  "price_1306"
+    t.integer  "volume_1306"
+    t.integer  "funds_1306"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
