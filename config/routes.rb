@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :etfs, only: [:index, :show]
 
   # ETFの種類ごとに作成！？
-  resources :performances, only: [:index]
+  resources :performances, only: [:index, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
