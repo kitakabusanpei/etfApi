@@ -8,8 +8,13 @@
 
 require "csv"
 
-CSV.foreach('db/etfperformance.csv', headers: true) do |row|
-  Performance.create(:date => row[0],
-                :price_1305 => row[1], :volume_1305 => row[2], :funds_1305 => row[3],
-                :price_1306 => row[4], :volume_1306 => row[5], :funds_1306 => row[6])
+# CSV.foreach('db/etfperformance.csv', headers: true) do |row|
+#   Performance.create(:date => row[0],
+#                 :price_1305 => row[1], :volume_1305 => row[2], :funds_1305 => row[3],
+#                 :price_1306 => row[4], :volume_1306 => row[5], :funds_1306 => row[6])
+# end
+
+# 株価
+CSV.foreach('db/dayStack.csv', headers: true) do |row|
+  Performance.create(:code => row[0], :name=> row[1], :price => row[2])
 end
