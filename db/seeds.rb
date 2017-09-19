@@ -16,5 +16,5 @@ require "csv"
 
 # 株価
 CSV.foreach('db/dayStack.csv', headers: true) do |row|
-  Performance.create(:code => row[0], :name=> row[1], :price => row[2])
+  Stack.create(:code => row[0], :name=> row[1], :price => row[2])
 end

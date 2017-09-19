@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'stacks/index'
+
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :etfs, only: [:index, :show]
